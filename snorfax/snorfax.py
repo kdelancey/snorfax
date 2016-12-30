@@ -37,13 +37,13 @@ class snorfax:
           #Split the paragraph by sentence
           ssplit = paragraphtxt.split(".")
           rdms = random.randint(0, len(ssplit)-1)
-          snorfaxtxt = ssplit[rdms].strip()
           snorfaxtxt = re.sub(r'\[\d+\]+', '', snorfaxtxt)
+          snorfaxtxt = ssplit[rdms].strip()
           
         else:
           await self.bot.say("Paragraph probs too short.")
           
-        if snorfaxtxt is not None and len(snorfaxtxt) != 0: #if fax is not bad
+        if snorfaxtxt is not None and len(snorfaxtxt) > 20: #if fax is not bad
           await self.bot.say("Here is your Snorfax:\n\"" + snorfaxtxt + "\"")
           
         else:
