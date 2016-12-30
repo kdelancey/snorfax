@@ -7,7 +7,7 @@ class Mycog:
    self.bot = bot
   
   @commands.command()
-  async def snor(self):
+  async def snorfax(self):
   
   #URL, get object from whatever magic call happens
     snorfax = None
