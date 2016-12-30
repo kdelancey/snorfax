@@ -1,5 +1,10 @@
 import discord
 from discord.ext import commands
+#py
+import aiohttp
+import random
+import os
+import sys
 
 class snorfax:
 
