@@ -37,8 +37,8 @@ class snorfax:
           #Split the paragraph by sentence
           ssplit = paragraphtxt.split(".")
           rdms = random.randint(0, len(ssplit)-1)
-          snorfaxtxt = re.sub(r'\[\d+\]+', '', snorfaxtxt)
-          snorfaxtxt = ssplit[rdms].strip()
+          snorfaxtxt = re.sub(r'\[\d+\]+', '', ssplit[rdms])
+          snorfaxtxt = snorfaxtxt.strip()
           
         else:
           await self.bot.say("Paragraph probs too short.")
