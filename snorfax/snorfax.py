@@ -12,7 +12,7 @@ class snorfax:
   #URL, get object from whatever magic call happens
     snorfaxtxt = None
     htmlObj = None
-    url = "http://bulbapedia.bulbagarden.net/wiki/Snorlax_(Pok%C3%A9mon)" #build the web adress
+    url = "https://en.wikipedia.org/wiki/Sochi" #build the web adress
     async with aiohttp.get(url) as response:
   #The HTML Object to act on and get text from.
       htmlObj = BeautifulSoup(await response.text(), "html.parser")
