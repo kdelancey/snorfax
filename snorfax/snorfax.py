@@ -47,7 +47,7 @@ class snorfax:
           await self.bot.say("Here is your Snorfax:\n\"" + snorfaxtxt + "\"")
           
         else:
-          await self.bot.say("\\:snorfax: \<:snorfax:264215284758347776> :heart: \r")
+          await self.bot.say("\\:snorfax: \\:snorfax:264215284758347776 \:snorfax:264215284758347776 :heart: \r")
           
       except ValueError:
         await self.bot.say("There's an error in Kyle's code.")
