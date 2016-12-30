@@ -19,7 +19,7 @@ class snorfax:
     snorfaxtxt = None
     htmlObj = None
     paragraph = None
-    url = "https://en.wikipedia.org/wiki/Bulbasaur" #build the web adress
+    url = "https://en.wikipedia.org/wiki/Snorlax" #build the web address
     async with aiohttp.get(url) as response:
   #The HTML Object to act on and get text from.
       htmlObj = BeautifulSoup(await response.text(), "html.parser")
@@ -36,13 +36,16 @@ class snorfax:
           #Split the paragraph by sentence
           ssplit = paragraphtxt.split(".")
           rdms = random.randint(0, len(ssplit)-1)
-          snorfaxtxt = ssplit[rdms]
+          snorfaxtxt = ssplit[rdms].strip()
           
         else:
           await self.bot.say("Paragraph probs too short.")
           
-        if snorfax is not None: #if fax is not bad
+        if snorfaxtxt is not None and len(snorfaxtxt) != 0: #if fax is not bad
           await self.bot.say("Here is your Snorfax:\n\"" + snorfaxtxt + "\"")
+          
+        else:
+          await self.bot.say(":snorfax:")
           
       except ValueError:
         await self.bot.say("There's an error in Kyle's code.")
