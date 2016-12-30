@@ -36,7 +36,7 @@ class snorfax:
           #Split the paragraph by sentence
           ssplit = paragraphtxt.split(".")
           rdms = random.randint(0, len(ssplit)-1)
-          snorfaxtxt = ssplit[rdms].get_text()
+          snorfaxtxt = ssplit[rdms]
           
         else:
           await self.bot.say("Paragraph probs too short.")
