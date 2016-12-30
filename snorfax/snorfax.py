@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class Mycog:
+class snorfax:
 
   def __init__(self, bot):
    self.bot = bot
@@ -27,4 +27,4 @@ class Mycog:
     await self.bot.say("There's an error in Kyle's code.")
 
 def setup(bot):
-  bot.add_cog(snor(bot))
+  bot.add_cog(snorfax(bot))
