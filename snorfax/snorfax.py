@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 #py
-from bs4 import BeautifulSoup as bs
+from bs4 import BeautifulSoup
 import aiohttp
 import random
 import os
