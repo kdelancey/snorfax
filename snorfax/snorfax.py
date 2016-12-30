@@ -28,11 +28,22 @@ class snorfax:
       try:
       #Snorfax
         paragraph = htmlObj.find_all('p')
-        if paragraph is not None:#ew, bad temp code
-          rdm = random.randint(0, len(paragraph))
-          snorfaxtxt = paragraph[rdm].get_text()
+        if paragraph is not None and len(paragraph) != 0:#ew, bad temp code
+          # Get random paragraph
+          rdmp = random.randint(0, len(paragraph)-1)
+          paragraphtxt = paragraph[rdmp].get_text()
+          
+          #Split the paragraph by sentence
+          ssplit = paragraphtxt.split(".")
+          rdms = random.randint(0, len(ssplit)-1)
+          snorfaxtxt = ssplit[rdms].get_text()
+          
+        else:
+          await self.bot.say("Paragraph probs too short.")
+          
         if snorfax is not None: #if fax is not bad
           await self.bot.say("Here is your Snorfax:\n\"" + snorfaxtxt + "\"")
+          
       except ValueError:
         await self.bot.say("There's an error in Kyle's code.")
 
