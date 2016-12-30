@@ -38,7 +38,6 @@ class snorfax:
           ssplit = paragraphtxt.split(".")
           rdms = random.randint(0, len(ssplit)-1)
           snorfaxtxt = ssplit[rdms].strip()
-          snorfaxtxt = re.sub(r'\d+', '', snorfaxtxt)
           snorfaxtxt = re.sub(r'\[\d+\]+', '', snorfaxtxt)
           
         else:
@@ -48,7 +47,7 @@ class snorfax:
           await self.bot.say("Here is your Snorfax:\n\"" + snorfaxtxt + "\"")
           
         else:
-          await self.bot.say(":snorfax: :heart: \r")
+          await self.bot.say("\:snorfax: :heart: \r")
           
       except ValueError:
         await self.bot.say("There's an error in Kyle's code.")
